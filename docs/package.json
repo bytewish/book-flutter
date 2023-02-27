@@ -20,6 +20,7 @@
   "dependencies": {
     "gitbook-plugin-back-to-top-button": "^0.1.4",
     "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-collapsible-menu": "^1.0.3",
     "gitbook-plugin-expandable-chapters": "^0.2.0",
     "gitbook-plugin-flexible-alerts": "^1.0.4",
     "gitbook-plugin-search-pro": "^2.0.2"
