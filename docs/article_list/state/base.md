@@ -38,10 +38,197 @@ class _BState extends State<B>{
 
 对于`StatefulWidget`来说，里面数据发生了变更，它只会去重新调用`B.state.build()`方法，而不会重新创建组件，所以`B.state`里面的属性都还在，也就意味着状态得到了保存。
 
+## 状态管理
+
+对于一个`StatefulWidget`来说，状态值该的管理一般有三种策略。widget自身管理、widget管理子Widget状态、混合管理(父Widget和子Widget一起管理)。
+
+### 自身管理
+
+如上面代码所示
+
+### 父Widget管理子Widget
+
+父Widget通过`setState`触发子Widget重新刷新来控制子Widget，子Widget通过回调函数来通知父Widget做更新。
+
+```dart
+// 父Widget代码
+class ParentWidget extends StatefulWidget{
+    _ParentWidgetState createState() => _ParentWidgetState();
+}
+
+class _ParentWidgetState extends State<ParentWidget>{
+    bool _active = false;
+    
+    void handleTapChanged(bool newVlue){
+        setState((){
+            _active = newValue;
+        })
+    }
+    
+    Widget build(BuildContext context){
+        return Container(
+        	child:TapBoxB(
+            	active:_active,
+                onChanged: handleTapChanged
+            )
+        );
+    }
+}
+```
+
+```dart
+// 子Widget代码
+class ChildWidget extends StatelessWidget{
+    ChildWidget({Key?key,this.active:false,required this.onChanged}):super(key:key);
+    
+    final bool active;
+    final ValueChanged<bool> onChanged;
+    
+    void _handleTap(){
+        onChanged(!active);
+    }
+    
+    Widget build(BuildContext context){
+        return GestureDetector(
+        	onTap:_handleTap,
+            child: Container(
+            	child:Text(active? 'Active':'Inactive')
+            )
+        );
+    }
+}
+```
+
+### 混合管理
+
+一般来说：对于只和自己相关的数据自己控制，和父控件相关的交由父容器控制。比如以下案例：由父容器控制是否显示，子容器控制是否显示边框
+
+```dart
+// 父容器
+class ParentWidgetC extends StatefulWidget{
+    _ParentWidgetCState createState() => _ParentWidgetCState();
+}
+
+class _ParentWidgetCState extends State<ParenetWidgetC>{
+    bool _active = false;
+    
+    void handleTapChanged(bool newValue){
+        setState((){
+            _active = newValue;
+        })
+    }
+    
+    Widget build(BuildContext context){
+        return Container(
+        	child: ChildWidget(
+            	active: _active,
+                onChanged: handleTapChanged
+            )
+        );
+    }
+}
+```
+
+```dart
+// 子容器控制：因为要控制状态，所以要申明为StatefulWidget
+class ChildWidget extends StatefulWidget{
+    ChildWidget({Key?key,this.active:false,required this.onChanged}):super(key:key);
+    
+    final bool active;
+    final ValueChanged<bool> onChanged;
+    
+    _ChildWidgetState createState() => _ChildWidgetState();
+}
+
+class _ChildWidgetState extends State<ChildWidget>{
+    bool _hightlight = false;
+    void handleTapDown(TapDownDetails details){
+        setState((){
+            _hightlight = true;
+        })
+    }
+    void handleTapUp(TapDownDetails details){
+        setState((){
+            _hightlight = false;
+        })
+    }
+    void handleTapCancel(TapDownDetails details){
+        setState((){
+            _hightlight = false;
+        })
+    }
+    void hangdeTap(){
+        widget.onChanged(!widget.active);
+    }
+    
+    Widget build(BuildContext context){
+        return GestureDetector(
+        	onTapDown: _handleTapDown,
+            onTapUp: _handleTapUp,
+            onTap:_hangleTap,
+            onTapCancel: _hangdleTapCancel,
+            ...
+        );
+    }
+}
+```
+
+
+
 ## 生命周期
 ![image description](../../imgs/life_state.png)
 
 `InheritedWidget`那些虚线框中的是只有引入了`InheritedWidget`触发了更新才会调用的。`setState`和`didUpdateWidget`都会触发`StatefulWidget`的`build`方法，实际上，页面重启和父组件调用`setState`都会触发`didUpdateWidget`重绘。
+
+
+
+# 渲染原理
+
+`Flutter`中的Widget并不是直接绘制在屏幕上的元素，而是根据widget转换，最终可渲染对象。
+
+![image description](../../imgs/tree.png)
+
+```
+1. 根据Widget树生成Element树。Element树节点都继承自Element类
+2. 根据Element树生成Render树（渲染树），渲染树节点都继承自RenderObject类
+3. 根据渲染树生成Layer树，这个树是可以直接在屏幕上显示的。Layer中的节点全部继承自Layer类
+```
+
+# 代码逻辑
+
+```dart
+@immutable
+abstract class Widget extends DiagnosticableTree{
+    // 控件独有：用来判断组件该创建还是更新，会在canUpdate中使用
+    final Key? key;
+    
+    @protected
+    @factory
+    Element createElement()
+}
+```
+
+```dart
+// StatelessWidget源码：伪代码
+abstract class StatelessWidget extends Widget{
+    /* 构造函数 */
+    StatelessElement createElement => StatelessElement(this);
+}
+```
+
+```dart
+// StatefulWidget
+abstract class StatefulWidget extends Widget{
+    /* 构造函数 */
+    StatefulElement createElement() => StatefulElement(this);
+    
+    State createState();
+}
+```
+
+从上面代码可以看出，`State`是单独维护的，所以不会出现组件`build`之后`State`还保留着。
+
+
 
 
 
