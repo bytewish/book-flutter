@@ -1,2 +1,0 @@
-只维护gh-pages，并使用以下命令打包直接输出
-gitbook build book-flutter book-flutter/docs
