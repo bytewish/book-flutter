@@ -1,6 +1,7 @@
 - [消息总线](./article_list/state/README.md)
     - [基础](./article_list/state/base.md)
     - [第三方库](./article_list/state/third.md)
+    	- [EventBus](./article_list/state/EventBus.md)
         - [Provider](./article_list/state/Provider.md)
         - [BLoc](./article_list/state/BLoc.md)
         - [Redux](./article_list/state/redux.md)
