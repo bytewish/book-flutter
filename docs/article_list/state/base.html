@@ -147,7 +147,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="Provider.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="EventBus.html">
+            
+                <a href="EventBus.html">
+            
+                    
+                    EventBus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="Provider.html">
             
                 <a href="Provider.html">
             
@@ -160,7 +173,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="BLoc.html">
+        <li class="chapter " data-level="1.2.2.3" data-path="BLoc.html">
             
                 <a href="BLoc.html">
             
@@ -173,7 +186,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" data-path="redux.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="redux.html">
             
                 <a href="redux.html">
             
@@ -267,11 +280,18 @@
     }
 
     Widget build(BuildContext context){
-        <span class="hljs-keyword">return</span> Container(<span class="hljs-string">&quot;&#x4F2A;&#x4EE3;&#x7801;&#xFF1A;&#x5E03;&#x5C40;&quot;</span>);
+        <span class="hljs-keyword">return</span> Container(
+            child: Row(
+                children:[
+                    Text(<span class="hljs-string">&quot;123&quot;</span>),
+                    <span class="hljs-keyword">const</span> Text(<span class="hljs-string">&quot;456&quot;</span>)
+                ]
+            )
+        );
     }
 }
 </code></pre>
-<p>&#x5BF9;&#x4E8E;<code>StatefulWidget</code>&#x6765;&#x8BF4;&#xFF0C;&#x91CC;&#x9762;&#x6570;&#x636E;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x66F4;&#xFF0C;&#x5B83;&#x53EA;&#x4F1A;&#x53BB;&#x91CD;&#x65B0;&#x8C03;&#x7528;<code>B.state.build()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;<code>B.state</code>&#x91CC;&#x9762;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x8FD8;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x72B6;&#x6001;&#x5F97;&#x5230;&#x4E86;&#x4FDD;&#x5B58;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;<code>StatefulWidget</code>&#x6765;&#x8BF4;&#xFF0C;&#x91CC;&#x9762;&#x6570;&#x636E;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x66F4;&#xFF0C;&#x5B83;&#x53EA;&#x4F1A;&#x53BB;&#x91CD;&#x65B0;&#x8C03;&#x7528;<code>B.state.build()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;<code>B.state</code>&#x91CC;&#x9762;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x8FD8;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x72B6;&#x6001;&#x5F97;&#x5230;&#x4E86;&#x4FDD;&#x5B58;&#x3002;&#x8FD9;&#x91CC;&#x7279;&#x522B;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5C5E;&#x6027;&#x6539;&#x53D8;&#x4F1A;&#x89E6;&#x53D1;Widget&#x7684;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#xFF0C;&#x4F46;&#x5B83;&#x5185;&#x90E8;&#x5305;&#x88F9;&#x7684;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x91CD;&#x5EFA;&#xFF0C;&#x5982;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;<code>const Text</code>&#x7EC4;&#x4EF6;&#x4F1A;&#x590D;&#x7528;&#x4EE5;&#x524D;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x91CD;&#x5EFA;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x6539;&#x53D8;&#x3002;</p>
 <h2 id="&#x72B6;&#x6001;&#x7BA1;&#x7406;">&#x72B6;&#x6001;&#x7BA1;&#x7406;</h2>
 <p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;<code>StatefulWidget</code>&#x6765;&#x8BF4;&#xFF0C;&#x72B6;&#x6001;&#x503C;&#x8BE5;&#x7684;&#x7BA1;&#x7406;&#x4E00;&#x822C;&#x6709;&#x4E09;&#x79CD;&#x7B56;&#x7565;&#x3002;widget&#x81EA;&#x8EAB;&#x7BA1;&#x7406;&#x3001;widget&#x7BA1;&#x7406;&#x5B50;Widget&#x72B6;&#x6001;&#x3001;&#x6DF7;&#x5408;&#x7BA1;&#x7406;(&#x7236;Widget&#x548C;&#x5B50;Widget&#x4E00;&#x8D77;&#x7BA1;&#x7406;)&#x3002;</p>
 <h3 id="&#x81EA;&#x8EAB;&#x7BA1;&#x7406;">&#x81EA;&#x8EAB;&#x7BA1;&#x7406;</h3>
@@ -395,7 +415,7 @@
 <p><img src="../../imgs/life_state.png" alt="image description"></p>
 <p><code>InheritedWidget</code>&#x90A3;&#x4E9B;&#x865A;&#x7EBF;&#x6846;&#x4E2D;&#x7684;&#x662F;&#x53EA;&#x6709;&#x5F15;&#x5165;&#x4E86;<code>InheritedWidget</code>&#x89E6;&#x53D1;&#x4E86;&#x66F4;&#x65B0;&#x624D;&#x4F1A;&#x8C03;&#x7528;&#x7684;&#x3002;<code>setState</code>&#x548C;<code>didUpdateWidget</code>&#x90FD;&#x4F1A;&#x89E6;&#x53D1;<code>StatefulWidget</code>&#x7684;<code>build</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x9875;&#x9762;&#x91CD;&#x542F;&#x548C;&#x7236;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;<code>setState</code>&#x90FD;&#x4F1A;&#x89E6;&#x53D1;<code>didUpdateWidget</code>&#x91CD;&#x7ED8;&#x3002;</p>
 <h1 id="&#x6E32;&#x67D3;&#x539F;&#x7406;">&#x6E32;&#x67D3;&#x539F;&#x7406;</h1>
-<p><code>Flutter</code>&#x4E2D;&#x7684;Widget&#x5E76;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x7ED8;&#x5236;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x662F;&#x6839;&#x636E;widget&#x8F6C;&#x6362;&#xFF0C;&#x6700;&#x7EC8;&#x53EF;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><code>Flutter</code>&#x4E2D;&#x7684;Widget&#x5E76;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x7ED8;&#x5236;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x662F;&#x6839;&#x636E;widget&#x8F6C;&#x6362;&#xFF0C;&#x6700;&#x7EC8;&#x53EF;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#x3002;&#x5F53;<code>Widget</code>&#x5C5E;&#x6027;&#x53D1;&#x751F;&#x53D8;&#x66F4;&#x7684;&#x65F6;&#x5019;&#x7CFB;&#x7EDF;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#xFF0C;&#x5E76;&#x66FF;&#x6362;&#x539F;&#x6709;&#x7684;<code>Widget</code>&#xFF0C;&#x540C;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x521B;&#x5EFA;&#x65B0;&#x7684;Element<code>&#xFF0C;&#x5E76;&#x5C06;&#x65B0;&#x7684;&#x63D2;&#x5165;&#x5230;</code>Element Tree`&#x4E2D;&#x3002;</p>
 <p><img src="../../imgs/tree.png" alt="image description"></p>
 <pre><code>1. &#x6839;&#x636E;Widget&#x6811;&#x751F;&#x6210;Element&#x6811;&#x3002;Element&#x6811;&#x8282;&#x70B9;&#x90FD;&#x7EE7;&#x627F;&#x81EA;Element&#x7C7B;
 2. &#x6839;&#x636E;Element&#x6811;&#x751F;&#x6210;Render&#x6811;&#xFF08;&#x6E32;&#x67D3;&#x6811;&#xFF09;&#xFF0C;&#x6E32;&#x67D3;&#x6811;&#x8282;&#x70B9;&#x90FD;&#x7EE7;&#x627F;&#x81EA;RenderObject&#x7C7B;
@@ -429,6 +449,77 @@
 <h1 id="inheritedwidget">InheritedWidget</h1>
 <p>&#x5728;Flutter&#x7684;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x5F53;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;Widget&#x7684;&#x72B6;&#x6001;&#x901A;&#x5E38;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x90E8;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x4EEC;&#x5BF9;&#x72B6;&#x6001;&#x7684;&#x4FEE;&#x6539;&#x90FD;&#x53EA;&#x5C40;&#x9650;&#x4E8E;&#x5728;&#x81EA;&#x5DF1;&#x5185;&#x90E8;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x4E2A;<code>Widget</code>&#x4E2D;&#x7EF4;&#x62A4;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x590D;&#x672C;&#x3002;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x505A;&#x5230;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x8BBF;&#x95EE;&#x3001;&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x3002;&#x6BD4;&#x5982;&#x73B0;&#x5728;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x7535;&#x5546;&#x9996;&#x9875;&#x7684;&#x8D2D;&#x7269;&#x8F66;&#x6A21;&#x5757;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x8D2D;&#x7269;&#x8F66;&#x5185;&#x7684;&#x6BCF;&#x6761;&#x5546;&#x54C1;&#x7684;&#x5C55;&#x793A;&#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x88C5;&#xFF0C;&#x6BD4;&#x5982;&#x53EB;<code>GoodsItemWidget</code>&#xFF0C;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5E95;&#x90E8;&#x603B;&#x52A0;&#x8D2D;&#x6570;&#x91CF;&#x4F1A;&#x8DDF;&#x7740;&#x6539;&#x53D8;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x4F7F;&#x7528;<code>setState</code>&#x5C31;&#x4E0D;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x505A;&#x5230;&#x4E86;&#x3002;&#x66F4;&#x522B;&#x8BF4;&#x8DE8;&#x9875;&#x9762;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x4E86;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#x5237;&#x65B0;&#x8D2D;&#x7269;&#x8F66;&#x3001;&#x6D88;&#x606F;&#x7B49;&#x529F;&#x80FD;&#x4E86;&#x3002;
 &#x800C;<code>InheritedWidget</code>&#x7684;&#x51FA;&#x73B0;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x5728;Widget&#x6811;&#x4E2D;&#x5171;&#x4EAB;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;Widget&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;&#x5B83;&#x8BBE;&#x8BA1;&#x7684;&#x51C6;&#x5219;&#x662F;&#x5F53;<code>InheritedWidget</code>&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x901A;&#x77E5;&#x5176;&#x4ED6;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x3002;</p>
+<h2 id="demo">demo</h2>
+<p>&#x521B;&#x5EFA;<code>InheritedWidget</code>&#x7684;&#x5B9E;&#x73B0;&#x7C7B;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">InheritedWidget</span> </span>{
+
+  <span class="hljs-keyword">final</span> <span class="hljs-built_in">int</span> count;
+  <span class="hljs-keyword">final</span> Widget child;
+  <span class="hljs-keyword">final</span> VoidCallback addCounter;  <span class="hljs-comment">//VoidCallback&#x7B49;&#x540C;&#x4E8E; void Function()</span>
+  <span class="hljs-keyword">final</span> VoidCallback removeCounter;
+
+  <span class="hljs-keyword">const</span> CountState({
+    Key? key,required <span class="hljs-keyword">this</span>.count,required <span class="hljs-keyword">this</span>.child,required <span class="hljs-keyword">this</span>.addCounter,required <span class="hljs-keyword">this</span>.removeCounter}) : <span class="hljs-keyword">super</span>(key: key, child: child);
+
+  <span class="hljs-comment">// &#x901A;&#x7528;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;&#x58F0;&#x660E;</span>
+  <span class="hljs-keyword">static</span> CountState of(BuildContext context) {
+    <span class="hljs-keyword">final</span> CountState? result = context.dependOnInheritedWidgetOfExactType&lt;CountState&gt;();
+    <span class="hljs-keyword">return</span> result!;
+  }
+
+  <span class="hljs-comment">// &#x7528;&#x6765;&#x63A7;&#x5236;&#x662F;&#x5426;&#x9700;&#x8981;&#x901A;&#x77E5;</span>
+  <span class="hljs-meta">@override</span>
+  <span class="hljs-built_in">bool</span> updateShouldNotify(CountState oldWidget) {
+    <span class="hljs-keyword">return</span> count != oldWidget.count;
+  }
+}
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x9875;&#x9762;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RootWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatefulWidget</span></span>{}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">_RootWidgetState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">State</span>&lt;<span class="hljs-title">RootWidget</span>&gt;</span>{
+    <span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">void</span> addCounter() {
+        setState(() {
+              count++;
+        });
+      }
+
+      <span class="hljs-keyword">void</span> removeCounter() {
+        setState(() {
+              count--;
+        });
+      }
+
+    Widget build(BuildContext context){
+        <span class="hljs-keyword">return</span> CountState(
+            count: count,
+            addCounter: addCounter,
+            removeCounter: removeCounter,
+            child: ChildWidget()
+        );
+    }
+}
+
+<span class="hljs-comment">// &#x5177;&#x4F53;UI&#x754C;&#x9762;:&#x7701;&#x7565;&#x5404;&#x79CD;&#x6837;&#x5F0F;&#x914D;&#x7F6E;&#x7B49;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChildWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span></span>{
+    Widget build(BuildContext context){
+        <span class="hljs-keyword">final</span> counterState = Counter.of(context);
+        <span class="hljs-keyword">return</span> Scaffold(
+            column(
+                children:&lt;Widget&gt;[
+                    Text(<span class="hljs-string">&apos;<span class="hljs-subst">${counterState.count}</span>&apos;</span>),
+                    Row(
+                        FloatingActionButton(onPressed:counterState.addCounter);
+                        FloatingActionButton(onPressed:counterState.removeCounter);
+                    )
+                ]
+            )
+        );
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -472,7 +563,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基础","level":"1.2.1","depth":2,"next":{"title":"第三方库","level":"1.2.2","depth":2,"path":"article_list/state/third.md","ref":"./article_list/state/third.md","articles":[{"title":"Provider","level":"1.2.2.1","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},{"title":"BLoc","level":"1.2.2.2","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},{"title":"Redux","level":"1.2.2.3","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]}]},"previous":{"title":"消息总线","level":"1.2","depth":1,"path":"article_list/state/README.md","ref":"./article_list/state/README.md","articles":[{"title":"基础","level":"1.2.1","depth":2,"path":"article_list/state/base.md","ref":"./article_list/state/base.md","articles":[]},{"title":"第三方库","level":"1.2.2","depth":2,"path":"article_list/state/third.md","ref":"./article_list/state/third.md","articles":[{"title":"Provider","level":"1.2.2.1","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},{"title":"BLoc","level":"1.2.2.2","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},{"title":"Redux","level":"1.2.2.3","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"sepia","family":"serif","size":1},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/state/base.md","mtime":"2023-02-27T10:05:16.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-27T10:37:00.146Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基础","level":"1.2.1","depth":2,"next":{"title":"第三方库","level":"1.2.2","depth":2,"path":"article_list/state/third.md","ref":"./article_list/state/third.md","articles":[{"title":"EventBus","level":"1.2.2.1","depth":3,"path":"article_list/state/EventBus.md","ref":"./article_list/state/EventBus.md","articles":[]},{"title":"Provider","level":"1.2.2.2","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},{"title":"BLoc","level":"1.2.2.3","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},{"title":"Redux","level":"1.2.2.4","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]}]},"previous":{"title":"消息总线","level":"1.2","depth":1,"path":"article_list/state/README.md","ref":"./article_list/state/README.md","articles":[{"title":"基础","level":"1.2.1","depth":2,"path":"article_list/state/base.md","ref":"./article_list/state/base.md","articles":[]},{"title":"第三方库","level":"1.2.2","depth":2,"path":"article_list/state/third.md","ref":"./article_list/state/third.md","articles":[{"title":"EventBus","level":"1.2.2.1","depth":3,"path":"article_list/state/EventBus.md","ref":"./article_list/state/EventBus.md","articles":[]},{"title":"Provider","level":"1.2.2.2","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},{"title":"BLoc","level":"1.2.2.3","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},{"title":"Redux","level":"1.2.2.4","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"sepia","family":"serif","size":1},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/state/base.md","mtime":"2023-02-28T07:19:29.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-28T07:47:14.348Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

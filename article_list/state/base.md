@@ -31,12 +31,19 @@ class _BState extends State<B>{
     }
     
     Widget build(BuildContext context){
-        return Container("伪代码：布局");
+        return Container(
+        	child: Row(
+            	children:[
+                    Text("123"),
+                    const Text("456")
+                ]
+            )
+        );
     }
 }
 ```
 
-对于`StatefulWidget`来说，里面数据发生了变更，它只会去重新调用`B.state.build()`方法，而不会重新创建组件，所以`B.state`里面的属性都还在，也就意味着状态得到了保存。
+对于`StatefulWidget`来说，里面数据发生了变更，它只会去重新调用`B.state.build()`方法，而不会重新创建组件，所以`B.state`里面的属性都还在，也就意味着状态得到了保存。这里特别要注意，属性改变会触发Widget的重新创建，但它内部包裹的并不一定会重建，如上述代码所示：`const Text`组件会复用以前的，并不会重建，因为它并没有任何改变。
 
 ## 状态管理
 

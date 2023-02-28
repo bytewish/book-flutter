@@ -64,7 +64,7 @@
     <link rel="next" href="BLoc.html" />
     
     
-    <link rel="prev" href="third.html" />
+    <link rel="prev" href="EventBus.html" />
     
 
     </head>
@@ -147,7 +147,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.2.1" data-path="Provider.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="EventBus.html">
+            
+                <a href="EventBus.html">
+            
+                    
+                    EventBus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.2" data-path="Provider.html">
             
                 <a href="Provider.html">
             
@@ -160,7 +173,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="BLoc.html">
+        <li class="chapter " data-level="1.2.2.3" data-path="BLoc.html">
             
                 <a href="BLoc.html">
             
@@ -173,7 +186,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" data-path="redux.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="redux.html">
             
                 <a href="redux.html">
             
@@ -241,7 +254,65 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h2>
+                                <h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1>
+<p>Flutter&#x5B98;&#x65B9;&#x5728;<code>Google IO</code>&#x5927;&#x4F1A;&#x4E0A;&#x63A8;&#x8350;&#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x65B9;&#x5F0F;&#x4E4B;&#x4E00;&#x3002;&#x539F;&#x6765;google&#x5B98;&#x65B9;&#x53D1;&#x5E03;&#x7684;<code>Flutter-provide</code>&#x57FA;&#x672C;&#x4E0D;&#x4F1A;&#x88AB;&#x7528;&#x5230;&#x4E86;&#x3002;</p>
+<h1 id="&#x539F;&#x7406;">&#x539F;&#x7406;</h1>
+<p><code>Provider</code>&#x5185;&#x90E8;&#x7684;<code>DlegateWidget</code>&#x662F;&#x4E00;&#x4E2A;<code>StatefulWidget</code>&#xFF0C;&#x6240;&#x4EE5;&#x5177;&#x6709;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x5176;&#x4E2D;&#x7684;&#x72B6;&#x6001;&#x5171;&#x4EAB;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>InheritedProvider</code>&#x7C7B;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F;&#x57FA;&#x4E8E;<code>InheritedWidget</code>&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<h1 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h1>
+<p>&#x5BFC;&#x5305;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">dependencies:</span>
+<span class="hljs-attr">  provider:</span> <span class="hljs-number">6.0</span><span class="hljs-number">.5</span>
+</code></pre>
+<p>&#x7F16;&#x5199;&#x9700;&#x8981;&#x76D1;&#x542C;&#x7684;&#x6CDB;&#x578B;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountModel</span> <span class="hljs-title">with</span> <span class="hljs-title">ChangeNotifier</span></span>{
+
+  <span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;
+
+  <span class="hljs-built_in">int</span> add(){
+    count++;
+    <span class="hljs-comment">// &#x901A;&#x77E5;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x66F4;</span>
+    notifyListeners();
+    <span class="hljs-keyword">return</span> count;
+  }
+
+}
+</code></pre>
+<p>&#x7F16;&#x5199;&#x72B6;&#x6001;&#x76D1;&#x542C;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProviderWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  <span class="hljs-keyword">const</span> ProviderWidget({Key? key}) : <span class="hljs-keyword">super</span>(key: key);
+
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> ChangeNotifierProvider&lt;CountModel&gt;(
+      <span class="hljs-comment">// &#x521B;&#x5EFA;&#x53EF;&#x4F9B;&#x76D1;&#x6D4B;&#x7684;&#x5BF9;&#x8C61;</span>
+      create: (context){<span class="hljs-keyword">return</span> CountModel();},
+      child: Scaffold(
+        body: Column(
+          children: [
+            <span class="hljs-comment">// &#x76D1;&#x542C;&#x5BF9;&#x8C61;&#x53D8;&#x66F4;</span>
+            Consumer&lt;CountModel&gt;(builder: (context,countModel,child){
+              <span class="hljs-keyword">return</span> Text(<span class="hljs-string">&apos;<span class="hljs-subst">${countModel.count}</span>&apos;</span>);
+            })
+          ],
+        ),
+        <span class="hljs-comment">// &#x76D1;&#x542C;&#x5BF9;&#x8C61;&#x53D8;&#x66F4;</span>
+        floatingActionButton: Consumer&lt;CountModel&gt;(builder: (context,countModel,child){
+          <span class="hljs-keyword">return</span> FloatingActionButton(onPressed: (){
+            countModel.add();
+          });
+        }),
+      ),
+    );
+  }
+}
+</code></pre>
+<h1 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h1>
+<blockquote>
+<ol>
+<li>&#x4E0D;&#x8981;&#x5C06;&#x6240;&#x6709;&#x72B6;&#x6001;&#x653E;&#x5728;&#x5168;&#x5C40;&#xFF0C;&#x4E0D;&#x8981;&#x7684;&#x8D44;&#x6E90;&#x53CA;&#x65F6;&#x91CA;&#x653E;</li>
+<li>&#x63A7;&#x5236;&#x5237;&#x65B0;&#x8303;&#x56F4;&#xFF1A;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;Consumer&#x548C;MultiProvider&#x7EC4;&#x5408;&#x4EE5;&#x51CF;&#x5C0F;&#x5237;&#x65B0;&#x8303;&#x56F4;</li>
+</ol>
+</blockquote>
 
                                 
                                 </section>
@@ -269,7 +340,7 @@
 
             
                 
-                <a href="third.html" class="navigation navigation-prev " aria-label="Previous page: 第三方库">
+                <a href="EventBus.html" class="navigation navigation-prev " aria-label="Previous page: EventBus">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -285,7 +356,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Provider","level":"1.2.2.1","depth":3,"next":{"title":"BLoc","level":"1.2.2.2","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},"previous":{"title":"第三方库","level":"1.2.2","depth":2,"path":"article_list/state/third.md","ref":"./article_list/state/third.md","articles":[{"title":"Provider","level":"1.2.2.1","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},{"title":"BLoc","level":"1.2.2.2","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},{"title":"Redux","level":"1.2.2.3","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"sepia","family":"serif","size":1},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/state/Provider.md","mtime":"2023-02-27T06:32:07.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-27T10:37:00.146Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Provider","level":"1.2.2.2","depth":3,"next":{"title":"BLoc","level":"1.2.2.3","depth":3,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},"previous":{"title":"EventBus","level":"1.2.2.1","depth":3,"path":"article_list/state/EventBus.md","ref":"./article_list/state/EventBus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"sepia","family":"serif","size":1},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/state/Provider.md","mtime":"2023-02-28T07:46:07.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-28T07:47:14.348Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
