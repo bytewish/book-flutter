@@ -8,7 +8,7 @@
 
 # Provider
 
-`Provider`是一个简单、轻量级的状态管理库，是基于`InheritedWidget`和`ChangeNotifier`来实现Widget数共享数据的一种实现方法，适用于小型应用。里面没有太多架构代码，单纯的只是基于方法的回调。
+`Provider`是一个简单、轻量级的状态管理库，是基于`InheritedWidget`和`ChangeNotifier`来实现Widget数共享数据的一种实现方法，适用于小型应用。里面没有太多架构代码，单纯的只是基于方法的，也就是说通过方法内部的通知更新来触发事件。
 
 
 
