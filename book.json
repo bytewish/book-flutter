@@ -2,12 +2,19 @@
     "title":"Flutter学习指南",
     "description":"前端学习Flutter笔记",
     "isbn":"",
-    "plugins":["expandable-chapters"],
+    "plugins":["expandable-chapters","anchor-navigation-ex"],
     "pluginsConfig": {
         "fontSettings": {
             "theme": "sepia",
             "family": "serif",
             "size": 1 
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false,
+            "showGoTop": true,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
         }
     },
     "variables": {}

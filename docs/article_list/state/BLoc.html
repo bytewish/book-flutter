@@ -21,6 +21,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -254,7 +258,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7B80;&#x4ECB;"><b></b>&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;"><b></b>&#x6982;&#x5FF5;</a></li><ul><li><span class="title-icon "></span><a href="#cubit"><b></b>Cubit</a></li><li><span class="title-icon "></span><a href="#bloc"><b></b>BLOC</a></li><li><span class="title-icon "></span><a href="#&#x533A;&#x522B;"><b></b>&#x533A;&#x522B;</a></li></ul><li><span class="title-icon "></span><a href="#bloc-widget"><b></b>BLoc Widget</a></li><ul><li><span class="title-icon "></span><a href="#blocprovider"><b></b>BlocProvider</a></li><ul><li><span class="title-icon "></span><a href="#multiblocprovider"><b></b>MultiBlocProvider</a></li></ul><li><span class="title-icon "></span><a href="#blocbuilder"><b></b>BlocBuilder</a></li><li><span class="title-icon "></span><a href="#blocseletor"><b></b>BlocSeletor</a></li><li><span class="title-icon "></span><a href="#bloclistener"><b></b>BlocListener</a></li><li><span class="title-icon "></span><a href="#blocconsumer"><b></b>BlocConsumer</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;"><b></b>&#x4F7F;&#x7528;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F9D;&#x8D56;&#x5305;"><b></b>&#x4F9D;&#x8D56;&#x5305;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x73B0;"><b></b>&#x5B9E;&#x73B0;</a></li><ul><li><span class="title-icon "></span><a href="#bloc&#x6A21;&#x5F0F;"><b></b>Bloc&#x6A21;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#cubit&#x6A21;&#x5F0F;"><b></b>Cubit&#x6A21;&#x5F0F;</a></li></ul></ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;"><b></b>&#x53C2;&#x8003;&#x94FE;&#x63A5;</a></li></ul></div><a href="#&#x7B80;&#x4ECB;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B80;&#x4ECB;"><a name="&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B80;&#x4ECB;</h1>
 <p><img src="../../imgs/bloc.png" alt="image description"></p>
 <p>bloc&#x5904;&#x7406;&#x903B;&#x8F91;</p>
 <pre><code>1. widget&#x89E6;&#x53D1;event&#x4E8B;&#x4EF6;
@@ -262,8 +266,8 @@
 3. &#x903B;&#x8F91;&#x5904;&#x7406;&#x5B8C;&#x8FD4;&#x56DE;&#x51FA;&#x6765;
 4. UI&#x5237;&#x65B0;&#x6570;&#x636E;
 </code></pre><p>&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;<code>BLoc</code>&#x4E2D;&#xFF0C;&#x989D;&#x5916;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>Cubit</code>&#x7684;&#x7C7B;&#x6765;&#x7BA1;&#x7406;&#x72B6;&#x6001;&#xFF0C;&#x5B83;&#x548C;<code>Bloc</code>&#x4E00;&#x6837;&#x90FD;&#x7EE7;&#x627F;&#x81EA;<code>BlocBase</code>&#x3002;<code>bloc&#x67B6;&#x6784;</code>&#x5C06;&#x9875;&#x9762;&#x3001;&#x903B;&#x8F91;&#x548C;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x79BB;&#xFF0C;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x4E8E;MVP&#x67B6;&#x6784;&#x3002;MVP&#x7684;&#x67B6;&#x6784;&#x4E3B;&#x8981;&#x7F3A;&#x9677;&#x5C31;&#x662F;&#x7C7B;(&#x6587;&#x4EF6;)&#x592A;&#x591A;&#xFF0C;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x63D2;&#x4EF6;&#xFF0C;&#x4F46;&#x63D2;&#x4EF6;&#x8981;&#x8DDF;&#x968F;<code>API</code>&#x53D8;&#x66F4;&#xFF0C;&#x5C31;&#x50CF;6~8&#x6709;&#x5927;&#x7684;<code>API</code>&#x53D8;&#x66F4;&#xFF0C;&#x63D2;&#x4EF6;&#x8981;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#xFF0C;&#x4EE4;&#x4EBA;&#x53CD;&#x611F;&#x7684;&#x662F;&#x5927;&#x7248;&#x672C;&#x4F1A;&#x5E9F;&#x5F03;<code>API</code>&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x70B9;&#x9EBB;&#x70E6;&#x3002;</p>
-<h1 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h1>
-<h2 id="cubit">Cubit</h2>
+<h1 id="&#x6982;&#x5FF5;"><a name="&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x5FF5;</h1>
+<h2 id="cubit"><a name="cubit" class="anchor-navigation-ex-anchor" href="#cubit"><i class="fa fa-link" aria-hidden="true"></i></a>Cubit</h2>
 <p>cubit&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x89E6;&#x53D1;<code>UI</code>&#x53D8;&#x66F4;</p>
 <p><img src="../../imgs/cubit.png" alt="image description"></p>
 <pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterCubit</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Cubit</span>&lt;<span class="hljs-title">int</span>&gt;</span>{  <span class="hljs-comment">// &#x6307;&#x660E;Cubit&#x7BA1;&#x7406;&#x7684;&#x72B6;&#x6001;&#x7C7B;&#x578B;</span>
@@ -289,7 +293,7 @@
 <p>&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x8C03;&#x7528;<code>close</code>&#x5173;&#x95ED;</p>
 <pre><code class="lang-dart">cubit.close();
 </code></pre>
-<h2 id="bloc">BLOC</h2>
+<h2 id="bloc"><a name="bloc" class="anchor-navigation-ex-anchor" href="#bloc"><i class="fa fa-link" aria-hidden="true"></i></a>BLOC</h2>
 <p>bloc&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#xFF0C;&#x8FD9;&#x4E5F;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x9664;&#x4E86;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x548C;&#x521D;&#x59CB;&#x503C;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x4E8B;&#x4EF6;&#x548C;&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x3002;</p>
 <p><img src="../../imgs/bloc.png" alt="image description"></p>
 <pre><code class="lang-dart"><span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;</span>
@@ -320,7 +324,7 @@ bloc.add(CounterPressed());
 <span class="hljs-comment">// &#x4E0D;&#x7528;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8C03;&#x7528;&#x5173;&#x95ED;&#x65B9;&#x6CD5;</span>
 <span class="hljs-keyword">await</span> bloc.close();
 </code></pre>
-<h2 id="&#x533A;&#x522B;">&#x533A;&#x522B;</h2>
+<h2 id="&#x533A;&#x522B;"><a name="&#x533A;&#x522B;" class="anchor-navigation-ex-anchor" href="#&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x533A;&#x522B;</h2>
 <p><code>Bloc</code>&#x548C;<code>Cubit</code>&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;<code>Bloc&#x7684;onTransition&#x65B9;&#x6CD5;</code>&#xFF0C;&#x5B83;&#x4F1A;&#x5728;<code>onChange</code>&#x4E4B;&#x524D;&#x8C03;&#x7528;&#xFF0C;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x6BCF;&#x4E00;&#x6B21;&#x72B6;&#x6001;&#x8F6C;&#x53D8;&#x7684;&#x8BE6;&#x7EC6;&#xFF0C;&#x5185;&#x90E8;&#x6E90;&#x7801;&#x5B9E;&#x73B0;&#x4E3B;&#x8981;&#x662F;&#x5C06;&#x4E8B;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;&#x72B6;&#x6001;&#x3002;</p>
 <pre><code class="lang-dart"><span class="hljs-meta">@Override</span>
 <span class="hljs-keyword">void</span> onTransiton(Transition&lt;CounterEvent,<span class="hljs-built_in">int</span>&gt; transition){
@@ -328,9 +332,9 @@ bloc.add(CounterPressed());
     <span class="hljs-built_in">print</span>(transation);
 }
 </code></pre>
-<h1 id="bloc-widget">BLoc Widget</h1>
+<h1 id="bloc-widget"><a name="bloc-widget" class="anchor-navigation-ex-anchor" href="#bloc-widget"><i class="fa fa-link" aria-hidden="true"></i></a>BLoc Widget</h1>
 <p>BLoc Widget&#x90FD;&#x6709;&#x96C6;&#x6210;<code>Cubit</code>&#x548C;<code>BLoc</code>&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x6709;<code>BLocProvider</code>&#x3001;<code>BlocBuilder</code>&#x3001;<code>BlocSelector</code>&#x3001;<code>BlocListener</code>&#x3001;<code>BlocConsumer</code>&#x3002;</p>
-<h2 id="blocprovider">BlocProvider</h2>
+<h2 id="blocprovider"><a name="blocprovider" class="anchor-navigation-ex-anchor" href="#blocprovider"><i class="fa fa-link" aria-hidden="true"></i></a>BlocProvider</h2>
 <pre><code class="lang-dart">BlocProvider(
     lazy:<span class="hljs-keyword">false</span>,  <span class="hljs-comment">//true&#x4E3A;&#x7ACB;&#x9A6C;&#x521B;&#x5EFA;&#xFF0C;false&#x8868;&#x793A;&#x5B50;&#x96C6;&#x83B7;&#x53D6;BlocPovider&#x7684;&#x65F6;&#x5019;&#x518D;&#x521B;&#x5EFA;</span>
     create:(BuildContext context) =&gt; BlocA(); <span class="hljs-comment">// &#x5728;&#x5B50;&#x96C6;&#x901A;&#x8FC7;of&#x521B;&#x5EFA;Bloc&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;</span>
@@ -339,7 +343,7 @@ bloc.add(CounterPressed());
 </code></pre>
 <p>&#x5728;<code>BlocProvider</code>&#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x5728;<code>ChildA</code>&#x7ACB;&#x9A6C;&#x83B7;&#x53D6;<code>BlocProvider</code>&#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;<code>BlocProvider.of&lt;T&gt;(context)</code>&#x6765;&#x83B7;&#x53D6;&#x3002;&#x8FD9;&#x79CD;&#x65B0;&#x5F0F;&#x521B;&#x5EFA;&#x7684;<code>Bloc</code>&#x4F1A;&#x7531;<code>BlocProvider</code>&#x6765;&#x7BA1;&#x7406;&#x5B83;&#x7684;&#x58F0;&#x660E;&#x5468;&#x671F;&#xFF0C;&#x662F;&#x5426;&#x56DE;&#x6536;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x5B83;&#x5728;&#x7BA1;&#x7406;&#x3002;</p>
 <p>&#x5728;<code>BlocProvider</code>&#x5916;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x53E6;&#x5916;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>context.read&lt;BlocA&gt;()</code>&#x6765;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>BlocProvider</code>&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6CA1;&#x6709;&#x521B;&#x5EFA;&#x5B83;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x7BA1;&#x7406;</p>
-<h3 id="multiblocprovider">MultiBlocProvider</h3>
+<h3 id="multiblocprovider"><a name="multiblocprovider" class="anchor-navigation-ex-anchor" href="#multiblocprovider"><i class="fa fa-link" aria-hidden="true"></i></a>MultiBlocProvider</h3>
 <p><code>MultiBlocProvider</code>&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;<code>BlocProvider</code>&#x7EC4;&#x5408;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#xFF0C;&#x4E0D;&#x4EC5;&#x4EC5;&#x63D0;&#x9AD8;&#x4E86;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x4E5F;&#x63D0;&#x9AD8;&#x4E86;&#x591A;&#x5C42;&#x5D4C;&#x5957;</p>
 <pre><code class="lang-dart">MultiBlocProvider(
     providers:[
@@ -353,7 +357,7 @@ bloc.add(CounterPressed());
     ]
 )
 </code></pre>
-<h2 id="blocbuilder">BlocBuilder</h2>
+<h2 id="blocbuilder"><a name="blocbuilder" class="anchor-navigation-ex-anchor" href="#blocbuilder"><i class="fa fa-link" aria-hidden="true"></i></a>BlocBuilder</h2>
 <p><code>BlocBuilder</code>&#x9700;&#x8981;bloc&#x548C;builder&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;<code>BlocBuilder</code>&#x5728;&#x63A5;&#x6536;&#x65B0;&#x7684;&#x72B6;&#x6001;&#x65F6;&#x5904;&#x7406;builder&#x7EC4;&#x4EF6;</p>
 <pre><code class="lang-dart">BlocBuilder&lt;BlocA,BlocAState&gt;(
     bloc:blocA,
@@ -366,7 +370,7 @@ bloc.add(CounterPressed());
     }
 )
 </code></pre>
-<h2 id="blocseletor">BlocSeletor</h2>
+<h2 id="blocseletor"><a name="blocseletor" class="anchor-navigation-ex-anchor" href="#blocseletor"><i class="fa fa-link" aria-hidden="true"></i></a>BlocSeletor</h2>
 <p><code>BlocSeletor</code>&#x662F;&#x4E00;&#x4E2A;&#x548C;<code>BlocBuilder</code>&#x7C7B;&#x4F3C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x503C;&#x6765;&#x8FC7;&#x6EE4;&#x66F4;&#x65B0;&#xFF0C;&#x5F53;&#x8FD9;&#x4E2A;&#x503C;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5219;&#x4F1A;&#x7EC4;&#x7EC7;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6784;&#x5EFA;</p>
 <pre><code class="lang-dart">BlocSelector&lt;BlocA,BlocAState,SelectedState&gt;(
     selector:(state){
@@ -377,7 +381,7 @@ bloc.add(CounterPressed());
     }
 )
 </code></pre>
-<h2 id="bloclistener">BlocListener</h2>
+<h2 id="bloclistener"><a name="bloclistener" class="anchor-navigation-ex-anchor" href="#bloclistener"><i class="fa fa-link" aria-hidden="true"></i></a>BlocListener</h2>
 <p>&#x6BCF;&#x6B21;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x90FD;&#x4F1A;&#x8C03;&#x7528;listener&#xFF0C;&#x548C;<code>BlocProvider</code>&#x6700;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#xFF0C;&#x521D;&#x59CB;&#x72B6;&#x6001;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;listener&#x65B9;&#x6CD5;</p>
 <pre><code class="lang-dart">BlocListener&lt;BlocA,BlocAState&gt;(
     bloc:blocA,
@@ -387,7 +391,7 @@ bloc.add(CounterPressed());
     child:...
 )
 </code></pre>
-<h2 id="blocconsumer">BlocConsumer</h2>
+<h2 id="blocconsumer"><a name="blocconsumer" class="anchor-navigation-ex-anchor" href="#blocconsumer"><i class="fa fa-link" aria-hidden="true"></i></a>BlocConsumer</h2>
 <p><code>BlocConsumer</code>&#x516C;&#x5F00;&#x4E00;&#x4E2A;<code>builder</code>&#x548C;<code>listener</code>&#xFF0C;&#x6709;&#x70B9;&#x50CF;<code>BlocListener</code>&#x548C;<code>BlocBuilder</code>&#x7684;&#x5408;&#x96C6;</p>
 <pre><code class="lang-dart">BlocConsumer&lt;BlocA,BlocAState&gt;(
     listener:(context,state){
@@ -398,22 +402,22 @@ bloc.add(CounterPressed());
     }
 )
 </code></pre>
-<h1 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h1>
-<h2 id="&#x4F9D;&#x8D56;&#x5305;">&#x4F9D;&#x8D56;&#x5305;</h2>
+<h1 id="&#x4F7F;&#x7528;"><a name="&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;</h1>
+<h2 id="&#x4F9D;&#x8D56;&#x5305;"><a name="&#x4F9D;&#x8D56;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x4F9D;&#x8D56;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F9D;&#x8D56;&#x5305;</h2>
 <pre><code class="lang-yaml"><span class="hljs-attr">dependencies:</span>
 <span class="hljs-attr">    flutter_bloc:</span> <span class="hljs-number">8.0</span><span class="hljs-number">.0</span>   <span class="hljs-comment">#bloc&#x4E0D;&#x4EC5;&#x4EC5;&#x53EF;&#x4EE5;&#x7528;&#x5728;flutter</span>
 </code></pre>
-<h2 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h2>
-<h3 id="bloc&#x6A21;&#x5F0F;">Bloc&#x6A21;&#x5F0F;</h3>
+<h2 id="&#x5B9E;&#x73B0;"><a name="&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;</h2>
+<h3 id="bloc&#x6A21;&#x5F0F;"><a name="bloc&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#bloc&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Bloc&#x6A21;&#x5F0F;</h3>
 <p>&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x590D;&#x6742;&#x9875;&#x9762;&#xFF0C;&#x56E0;&#x4E3A;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x5F88;&#x591A;&#x3002;</p>
-<h4 id="&#x751F;&#x6210;&#x6587;&#x4EF6;">&#x751F;&#x6210;&#x6587;&#x4EF6;</h4>
+<h4 id="&#x751F;&#x6210;&#x6587;&#x4EF6;"><a name="&#x751F;&#x6210;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x6210;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6210;&#x6587;&#x4EF6;</h4>
 <p>&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#x540E;&#x53F3;&#x952E;&#x521B;&#x5EFA;<code>Bloc Class</code>&#xFF0C;&#x4F1A;&#x751F;&#x6210;3&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x6211;&#x4EEC;&#x4F1A;&#x5C06;&#x5BF9;&#x5E94;&#x9875;&#x9762;&#x4E5F;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
 <pre><code>main
     -main_bloc.dart  
     -main_event.dart 
     -main_state.dart
     -main_page.dart
-</code></pre><h4 id="mainevent">main_event</h4>
+</code></pre><h4 id="mainevent"><a name="mainevent" class="anchor-navigation-ex-anchor" href="#mainevent"><i class="fa fa-link" aria-hidden="true"></i></a>main_event</h4>
 <p>&#x7533;&#x660E;&#x6709;&#x54EA;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x540E;&#x9762;&#x4E24;&#x4E2A;&#x662F;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;<code>MainEvent</code>&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x521D;&#x59CB;&#x5316;&#x8C03;&#x7528;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x9012;&#x52A0;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;</p>
 <pre><code class="lang-dart"><span class="hljs-meta">@immutable</span>
 <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainEvent</span></span>{}
@@ -421,7 +425,7 @@ bloc.add(CounterPressed());
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InitEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MainEvent</span></span>{}
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MainEvent</span></span>{}
 </code></pre>
-<h4 id="mainstate">main_state</h4>
+<h4 id="mainstate"><a name="mainstate" class="anchor-navigation-ex-anchor" href="#mainstate"><i class="fa fa-link" aria-hidden="true"></i></a>main_state</h4>
 <p>&#x7533;&#x660E;&#x72B6;&#x6001;&#xFF08;&#x91CD;&#x65B0;&#x7ED8;&#x5236;&#x9875;&#x9762;&#x4E0D;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#x7684;&#x79F0;&#x4E3A;&#x72B6;&#x6001;&#xFF09;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x4EE5;&#x7533;&#x660E;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x3002;&#x591A;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x8BDD;&#x5EFA;&#x8BAE;&#x5728;&#x62BD;&#x8C61;&#x7C7B;&#x91CC;&#x9762;&#x7533;&#x660E;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x6837;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7236;&#x7C7B;&#x53BB;&#x8C03;&#x7528;&#xFF0C;&#x4E0D;&#x7528;&#x518D;&#x8F6C;&#x7C7B;&#x578B;&#x4E86;</p>
 <pre><code class="lang-dart"><span class="hljs-meta">@immutable</span>
 <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainState</span></span>{
@@ -441,7 +445,7 @@ bloc.add(CounterPressed());
     }
 }
 </code></pre>
-<h4 id="mainbloc">main_bloc</h4>
+<h4 id="mainbloc"><a name="mainbloc" class="anchor-navigation-ex-anchor" href="#mainbloc"><i class="fa fa-link" aria-hidden="true"></i></a>main_bloc</h4>
 <p>&#x4E8B;&#x4EF6;&#x8F6C;&#x6362;&#x79F0;&#x4E3A;&#x72B6;&#x6001;&#x7684;&#x5904;&#x7406;&#x7C7B;&#x3002;&#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x4E86;&#xFF0C;&#x5F88;&#x65B9;&#x4FBF;</p>
 <pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainBloc</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bloc</span>&lt;<span class="hljs-title">MainEvent</span>, <span class="hljs-title">MainState</span>&gt; </span>{
   MainBloc() : <span class="hljs-keyword">super</span>(MainState()) {
@@ -459,7 +463,7 @@ bloc.add(CounterPressed());
   }
 }
 </code></pre>
-<h4 id="mainpage">main_page</h4>
+<h4 id="mainpage"><a name="mainpage" class="anchor-navigation-ex-anchor" href="#mainpage"><i class="fa fa-link" aria-hidden="true"></i></a>main_page</h4>
 <pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainPage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
   <span class="hljs-keyword">const</span> MainPage({Key? key}) : <span class="hljs-keyword">super</span>(key: key);
 
@@ -499,9 +503,9 @@ bloc.add(CounterPressed());
   }
 }
 </code></pre>
-<h3 id="cubit&#x6A21;&#x5F0F;">Cubit&#x6A21;&#x5F0F;</h3>
+<h3 id="cubit&#x6A21;&#x5F0F;"><a name="cubit&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#cubit&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Cubit&#x6A21;&#x5F0F;</h3>
 <p><code>Cubit</code>&#x6A21;&#x5F0F;&#xFF0C;&#x5206;&#x522B;&#x5206;&#x4E3A;<code>UI</code>&#x5C42;&#x3001;<code>state</code>&#x6570;&#x636E;&#x5C42;&#x3001;<code>cubit</code>&#x903B;&#x8F91;&#x5904;&#x7406;&#x5C42;&#x3002;&#x76F8;&#x8F83;&#x4E8E;<code>Bloc</code>&#x53BB;&#x6389;&#x4E86;<code>event</code>&#x5C42;&#xFF0C;&#x9002;&#x5408;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x548C;<code>bloc&#x6A21;&#x5F0F;</code>&#x6700;&#x5927;&#x7684;&#x533A;&#x5206;&#x662F;&#x903B;&#x8F91;&#x5904;&#x7406;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;<code>UI</code>&#x3001;&#x6570;&#x636E;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
-<h4 id="countercubit">counter_cubit</h4>
+<h4 id="countercubit"><a name="countercubit" class="anchor-navigation-ex-anchor" href="#countercubit"><i class="fa fa-link" aria-hidden="true"></i></a>counter_cubit</h4>
 <pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterCubit</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Cubit</span>&lt;<span class="hljs-title">CounterInitial</span>&gt; </span>{
   CounterCubit() : <span class="hljs-keyword">super</span>(CounterInitial(<span class="hljs-number">0</span>));
 
@@ -511,7 +515,7 @@ bloc.add(CounterPressed());
 
 }
 </code></pre>
-<h4 id="counterstate">counter_state</h4>
+<h4 id="counterstate"><a name="counterstate" class="anchor-navigation-ex-anchor" href="#counterstate"><i class="fa fa-link" aria-hidden="true"></i></a>counter_state</h4>
 <p>&#x4E3B;&#x8981;&#xFF1A;&#x68C0;&#x6D4B;&#x7684;&#x662F;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x66F4;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5185;&#x90E8;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x66F4;&#xFF0C;&#x6240;&#x4EE5;&#x5185;&#x90E8;&#x5C5E;&#x6027;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x4F1A;&#x6536;&#x5230;&#x66F4;&#x65B0;&#x63D0;&#x793A;</p>
 <pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterInitial</span> </span>{
   late <span class="hljs-built_in">int</span> <span class="hljs-built_in">num</span> ;
@@ -540,7 +544,7 @@ bloc.add(CounterPressed());
   }
 }
 </code></pre>
-<h4 id="counterpage">counter_page</h4>
+<h4 id="counterpage"><a name="counterpage" class="anchor-navigation-ex-anchor" href="#counterpage"><i class="fa fa-link" aria-hidden="true"></i></a>counter_page</h4>
 <pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainCubitPage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
   <span class="hljs-keyword">const</span> MainCubitPage({Key? key}) : <span class="hljs-keyword">super</span>(key: key);
 
@@ -575,7 +579,7 @@ bloc.add(CounterPressed());
   }
 }
 </code></pre>
-<h1 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h1>
+<h1 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;"><a name="&#x53C2;&#x8003;&#x94FE;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;</h1>
 <p><a href="https://wuyaogexing.com/70/386203.html" target="_blank">https://wuyaogexing.com/70/386203.html</a></p>
 <p><a href="https://juejin.cn/post/7132113687237623839" target="_blank">https://juejin.cn/post/7132113687237623839</a></p>
 
@@ -621,7 +625,7 @@ bloc.add(CounterPressed());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"BLoc","level":"1.2.2.3","depth":3,"next":{"title":"Redux","level":"1.2.2.4","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]},"previous":{"title":"Provider","level":"1.2.2.2","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"sepia","family":"serif","size":1},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/state/BLoc.md","mtime":"2023-03-06T03:16:29.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-06T03:17:08.312Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BLoc","level":"1.2.2.3","depth":3,"next":{"title":"Redux","level":"1.2.2.4","depth":3,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]},"previous":{"title":"Provider","level":"1.2.2.2","depth":3,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/state/BLoc.md","mtime":"2023-03-06T03:16:29.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-06T03:41:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
