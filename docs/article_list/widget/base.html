@@ -1,0 +1,419 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>原理 · Flutter学习指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../state/" />
+    
+    
+    <link rel="prev" href="inherited.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Wiget
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="stateless.html">
+            
+                <a href="stateless.html">
+            
+                    
+                    StatelessWidget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="stateful.html">
+            
+                <a href="stateful.html">
+            
+                    
+                    StatefulWidget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="inherited.html">
+            
+                <a href="inherited.html">
+            
+                    
+                    InheritedWidget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                    原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../state/">
+            
+                <a href="../state/">
+            
+                    
+                    状态管理框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../state/EventBus.html">
+            
+                <a href="../state/EventBus.html">
+            
+                    
+                    EventBus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../state/Provider.html">
+            
+                <a href="../state/Provider.html">
+            
+                    
+                    Provider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../state/BLoc.html">
+            
+                <a href="../state/BLoc.html">
+            
+                    
+                    BLoc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../state/redux.html">
+            
+                <a href="../state/redux.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >原理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x751F;&#x547D;&#x5468;&#x671F;"><b></b>&#x751F;&#x547D;&#x5468;&#x671F;</a></li><li><span class="title-icon "></span><a href="#&#x6E32;&#x67D3;&#x539F;&#x7406;"><b></b>&#x6E32;&#x67D3;&#x539F;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x6E90;&#x7801;"><b></b>&#x6E90;&#x7801;</a></li></ul></div><a href="#&#x751F;&#x547D;&#x5468;&#x671F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x751F;&#x547D;&#x5468;&#x671F;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x547D;&#x5468;&#x671F;</h1>
+<p><img src="../../imgs/life_state.png" alt="image description">
+<code>InheritedWidget</code>&#x90A3;&#x4E9B;&#x865A;&#x7EBF;&#x6846;&#x4E2D;&#x7684;&#x662F;&#x53EA;&#x6709;&#x5F15;&#x5165;&#x4E86;<code>InheritedWidget</code>&#x89E6;&#x53D1;&#x4E86;&#x66F4;&#x65B0;&#x624D;&#x4F1A;&#x8C03;&#x7528;&#x7684;&#x3002;<code>setState</code>&#x548C;<code>didUpdateWidget</code>&#x90FD;&#x4F1A;&#x89E6;&#x53D1;<code>StatefulWidget</code>&#x7684;<code>build</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x9875;&#x9762;&#x91CD;&#x542F;&#x548C;&#x7236;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;<code>setState</code>&#x90FD;&#x4F1A;&#x89E6;&#x53D1;<code>didUpdateWidget</code>&#x91CD;&#x7ED8;&#x3002;</p>
+<h1 id="&#x6E32;&#x67D3;&#x539F;&#x7406;"><a name="&#x6E32;&#x67D3;&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x6E32;&#x67D3;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E32;&#x67D3;&#x539F;&#x7406;</h1>
+<p><code>Flutter</code>&#x4E2D;&#x7684;Widget&#x5E76;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x7ED8;&#x5236;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x662F;&#x6839;&#x636E;widget&#x8F6C;&#x6362;&#xFF0C;&#x6700;&#x7EC8;&#x53EF;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#x3002;&#x5F53;<code>Widget</code>&#x5C5E;&#x6027;&#x53D1;&#x751F;&#x53D8;&#x66F4;&#x7684;&#x65F6;&#x5019;&#x7CFB;&#x7EDF;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#xFF0C;&#x5E76;&#x66FF;&#x6362;&#x539F;&#x6709;&#x7684;<code>Widget</code>&#xFF0C;&#x540C;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x521B;&#x5EFA;&#x65B0;&#x7684;Element<code>&#xFF0C;&#x5E76;&#x5C06;&#x65B0;&#x7684;&#x63D2;&#x5165;&#x5230;</code>Element Tree`&#x4E2D;&#x3002;
+<img src="../../imgs/tree.png" alt="image description"></p>
+<pre><code>1. &#x6839;&#x636E;Widget&#x6811;&#x751F;&#x6210;Element&#x6811;&#x3002;Element&#x6811;&#x8282;&#x70B9;&#x90FD;&#x7EE7;&#x627F;&#x81EA;Element&#x7C7B;
+2. &#x6839;&#x636E;Element&#x6811;&#x751F;&#x6210;Render&#x6811;&#xFF08;&#x6E32;&#x67D3;&#x6811;&#xFF09;&#xFF0C;&#x6E32;&#x67D3;&#x6811;&#x8282;&#x70B9;&#x90FD;&#x7EE7;&#x627F;&#x81EA;RenderObject&#x7C7B;
+3. &#x6839;&#x636E;&#x6E32;&#x67D3;&#x6811;&#x751F;&#x6210;Layer&#x6811;&#xFF0C;&#x8FD9;&#x4E2A;&#x6811;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x663E;&#x793A;&#x7684;&#x3002;Layer&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x5168;&#x90E8;&#x7EE7;&#x627F;&#x81EA;Layer&#x7C7B;
+</code></pre><h1 id="&#x6E90;&#x7801;"><a name="&#x6E90;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x6E90;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E90;&#x7801;</h1>
+<h1 id=""> </h1>
+<pre><code class="lang-dart"><span class="hljs-meta">@immutable</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Widget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DiagnosticableTree</span></span>{
+    <span class="hljs-comment">// &#x63A7;&#x4EF6;&#x72EC;&#x6709;&#xFF1A;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7EC4;&#x4EF6;&#x8BE5;&#x521B;&#x5EFA;&#x8FD8;&#x662F;&#x66F4;&#x65B0;&#xFF0C;&#x4F1A;&#x5728;canUpdate&#x4E2D;&#x4F7F;&#x7528;</span>
+    <span class="hljs-keyword">final</span> Key? key;
+
+    <span class="hljs-meta">@protected</span>
+    <span class="hljs-meta">@factory</span>
+    <span class="hljs-built_in">Element</span> createElement()
+}
+</code></pre>
+<pre><code class="lang-dart"><span class="hljs-comment">// StatelessWidget&#x6E90;&#x7801;&#xFF1A;&#x4F2A;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatelessWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span></span>{
+    <span class="hljs-comment">/* &#x6784;&#x9020;&#x51FD;&#x6570; */</span>
+    StatelessElement createElement =&gt; StatelessElement(<span class="hljs-keyword">this</span>);
+}
+</code></pre>
+<pre><code class="lang-dart"><span class="hljs-comment">// StatefulWidget</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatefulWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span></span>{
+    <span class="hljs-comment">/* &#x6784;&#x9020;&#x51FD;&#x6570; */</span>
+    StatefulElement createElement() =&gt; StatefulElement(<span class="hljs-keyword">this</span>);
+
+    State createState();
+}
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;<code>State</code>&#x662F;&#x5355;&#x72EC;&#x7EF4;&#x62A4;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x7EC4;&#x4EF6;<code>build</code>&#x4E4B;&#x540E;<code>State</code>&#x8FD8;&#x4FDD;&#x7559;&#x7740;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="inherited.html" class="navigation navigation-prev " aria-label="Previous page: InheritedWidget">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../state/" class="navigation navigation-next " aria-label="Next page: 状态管理框架">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"原理","level":"1.2.4","depth":2,"next":{"title":"状态管理框架","level":"1.3","depth":1,"path":"article_list/state/README.md","ref":"./article_list/state/README.md","articles":[{"title":"EventBus","level":"1.3.1","depth":2,"path":"article_list/state/EventBus.md","ref":"./article_list/state/EventBus.md","articles":[]},{"title":"Provider","level":"1.3.2","depth":2,"path":"article_list/state/Provider.md","ref":"./article_list/state/Provider.md","articles":[]},{"title":"BLoc","level":"1.3.3","depth":2,"path":"article_list/state/BLoc.md","ref":"./article_list/state/BLoc.md","articles":[]},{"title":"Redux","level":"1.3.4","depth":2,"path":"article_list/state/redux.md","ref":"./article_list/state/redux.md","articles":[]}]},"previous":{"title":"InheritedWidget","level":"1.2.3","depth":2,"path":"article_list/widget/inherited.md","ref":"./article_list/widget/inherited.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/widget/base.md","mtime":"2023-03-08T08:24:41.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-08T08:36:45.071Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

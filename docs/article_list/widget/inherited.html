@@ -1,0 +1,457 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>InheritedWidget · Flutter学习指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="base.html" />
+    
+    
+    <link rel="prev" href="stateful.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Wiget
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="stateless.html">
+            
+                <a href="stateless.html">
+            
+                    
+                    StatelessWidget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="stateful.html">
+            
+                <a href="stateful.html">
+            
+                    
+                    StatefulWidget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="inherited.html">
+            
+                <a href="inherited.html">
+            
+                    
+                    InheritedWidget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                    原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../state/">
+            
+                <a href="../state/">
+            
+                    
+                    状态管理框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../state/EventBus.html">
+            
+                <a href="../state/EventBus.html">
+            
+                    
+                    EventBus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../state/Provider.html">
+            
+                <a href="../state/Provider.html">
+            
+                    
+                    Provider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../state/BLoc.html">
+            
+                <a href="../state/BLoc.html">
+            
+                    
+                    BLoc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../state/redux.html">
+            
+                <a href="../state/redux.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >InheritedWidget</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#inheritedwidget"><b></b>InheritedWidget</a></li><ul><li><span class="title-icon "></span><a href="#demo"><b></b>demo</a></li></ul></ul></div><a href="#inheritedwidget" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="inheritedwidget"><a name="inheritedwidget" class="anchor-navigation-ex-anchor" href="#inheritedwidget"><i class="fa fa-link" aria-hidden="true"></i></a>InheritedWidget</h1>
+<p>&#x5728;Flutter&#x7684;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x5F53;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;Widget&#x7684;&#x72B6;&#x6001;&#x901A;&#x5E38;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x90E8;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x4EEC;&#x5BF9;&#x72B6;&#x6001;&#x7684;&#x4FEE;&#x6539;&#x90FD;&#x53EA;&#x5C40;&#x9650;&#x4E8E;&#x5728;&#x81EA;&#x5DF1;&#x5185;&#x90E8;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x4E2A;<code>Widget</code>&#x4E2D;&#x7EF4;&#x62A4;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x590D;&#x672C;&#x3002;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x505A;&#x5230;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x8BBF;&#x95EE;&#x3001;&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x3002;&#x6BD4;&#x5982;&#x73B0;&#x5728;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x7535;&#x5546;&#x9996;&#x9875;&#x7684;&#x8D2D;&#x7269;&#x8F66;&#x6A21;&#x5757;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x8D2D;&#x7269;&#x8F66;&#x5185;&#x7684;&#x6BCF;&#x6761;&#x5546;&#x54C1;&#x7684;&#x5C55;&#x793A;&#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x88C5;&#xFF0C;&#x6BD4;&#x5982;&#x53EB;<code>GoodsItemWidget</code>&#xFF0C;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5E95;&#x90E8;&#x603B;&#x52A0;&#x8D2D;&#x6570;&#x91CF;&#x4F1A;&#x8DDF;&#x7740;&#x6539;&#x53D8;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x4F7F;&#x7528;<code>setState</code>&#x5C31;&#x4E0D;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x505A;&#x5230;&#x4E86;&#x3002;&#x66F4;&#x522B;&#x8BF4;&#x8DE8;&#x9875;&#x9762;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x4E86;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#x5237;&#x65B0;&#x8D2D;&#x7269;&#x8F66;&#x3001;&#x6D88;&#x606F;&#x7B49;&#x529F;&#x80FD;&#x4E86;&#x3002;
+&#x800C;<code>InheritedWidget</code>&#x7684;&#x51FA;&#x73B0;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x5728;Widget&#x6811;&#x4E2D;&#x5171;&#x4EAB;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;Widget&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;&#x5B83;&#x8BBE;&#x8BA1;&#x7684;&#x51C6;&#x5219;&#x662F;&#x5F53;<code>InheritedWidget</code>&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x901A;&#x77E5;&#x5176;&#x4ED6;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x3002;</p>
+<h2 id="demo"><a name="demo" class="anchor-navigation-ex-anchor" href="#demo"><i class="fa fa-link" aria-hidden="true"></i></a>demo</h2>
+<p>&#x521B;&#x5EFA;<code>InheritedWidget</code>&#x7684;&#x5B9E;&#x73B0;&#x7C7B;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">InheritedWidget</span> </span>{
+
+  <span class="hljs-keyword">final</span> <span class="hljs-built_in">int</span> count;
+  <span class="hljs-keyword">final</span> Widget child;
+  <span class="hljs-keyword">final</span> VoidCallback addCounter;  <span class="hljs-comment">//VoidCallback&#x7B49;&#x540C;&#x4E8E; void Function()</span>
+  <span class="hljs-keyword">final</span> VoidCallback removeCounter;
+
+  <span class="hljs-keyword">const</span> CountState({
+    Key? key,required <span class="hljs-keyword">this</span>.count,required <span class="hljs-keyword">this</span>.child,required <span class="hljs-keyword">this</span>.addCounter,required <span class="hljs-keyword">this</span>.removeCounter}) : <span class="hljs-keyword">super</span>(key: key, child: child);
+
+  <span class="hljs-comment">// &#x901A;&#x7528;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;&#x58F0;&#x660E;</span>
+  <span class="hljs-keyword">static</span> CountState of(BuildContext context) {
+    <span class="hljs-keyword">final</span> CountState? result = context.dependOnInheritedWidgetOfExactType&lt;CountState&gt;();
+    <span class="hljs-keyword">return</span> result!;
+  }
+
+  <span class="hljs-comment">// &#x7528;&#x6765;&#x63A7;&#x5236;&#x662F;&#x5426;&#x9700;&#x8981;&#x901A;&#x77E5;</span>
+  <span class="hljs-meta">@override</span>
+  <span class="hljs-built_in">bool</span> updateShouldNotify(CountState oldWidget) {
+    <span class="hljs-keyword">return</span> count != oldWidget.count;
+  }
+}
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x9875;&#x9762;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RootWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatefulWidget</span></span>{}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">_RootWidgetState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">State</span>&lt;<span class="hljs-title">RootWidget</span>&gt;</span>{
+    <span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">void</span> addCounter() {
+        setState(() {
+              count++;
+        });
+      }
+
+      <span class="hljs-keyword">void</span> removeCounter() {
+        setState(() {
+              count--;
+        });
+      }
+
+    Widget build(BuildContext context){
+        <span class="hljs-keyword">return</span> CountState(
+            count: count,
+            addCounter: addCounter,
+            removeCounter: removeCounter,
+            child: ChildWidget()
+        );
+    }
+}
+
+<span class="hljs-comment">// &#x5177;&#x4F53;UI&#x754C;&#x9762;:&#x7701;&#x7565;&#x5404;&#x79CD;&#x6837;&#x5F0F;&#x914D;&#x7F6E;&#x7B49;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChildWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span></span>{
+    Widget build(BuildContext context){
+        <span class="hljs-keyword">final</span> counterState = Counter.of(context);
+        <span class="hljs-keyword">return</span> Scaffold(
+            column(
+                children:&lt;Widget&gt;[
+                    Text(<span class="hljs-string">&apos;<span class="hljs-subst">${counterState.count}</span>&apos;</span>),
+                    Row(
+                        FloatingActionButton(onPressed:counterState.addCounter);
+                        FloatingActionButton(onPressed:counterState.removeCounter);
+                    )
+                ]
+            )
+        );
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="stateful.html" class="navigation navigation-prev " aria-label="Previous page: StatefulWidget">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="base.html" class="navigation navigation-next " aria-label="Next page: 原理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"InheritedWidget","level":"1.2.3","depth":2,"next":{"title":"原理","level":"1.2.4","depth":2,"path":"article_list/widget/base.md","ref":"./article_list/widget/base.md","articles":[]},"previous":{"title":"StatefulWidget","level":"1.2.2","depth":2,"path":"article_list/widget/stateful.md","ref":"./article_list/widget/stateful.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Flutter学习指南","gitbook":"*","description":"前端学习Flutter笔记"},"file":{"path":"article_list/widget/inherited.md","mtime":"2023-03-08T08:25:52.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-08T08:36:45.071Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
